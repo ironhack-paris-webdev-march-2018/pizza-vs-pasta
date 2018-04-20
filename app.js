@@ -51,7 +51,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 app.use((req, res, next) => {
-  console.log("PASTA FOREVER!")
+  console.log("🍕 Pizza is better for some people 🍕");
+  console.log("PASTA FOREVER (for others)!");
   next();
 });
 
