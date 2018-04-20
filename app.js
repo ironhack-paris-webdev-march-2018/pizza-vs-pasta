@@ -1,18 +1,18 @@
 require('dotenv').config();
 
-const bodyParser   = require('body-parser');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const express      = require('express');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
-const logger       = require('morgan');
-const path         = require('path');
+const express = require('express');
+const favicon = require('serve-favicon');
+const hbs = require('hbs');
+const mongoose = require('mongoose');
+const logger = require('morgan');
+const path = require('path');
 
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/pizza-vs-pasta', {useMongoClient: true})
+  .connect('mongodb://localhost/pizza-vs-pasta', { useMongoClient: true })
   .then(() => {
     console.log('Connected to Mongo! 💪🏽')
   }).catch(err => {
@@ -33,7 +33,7 @@ app.use(cookieParser());
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
+  src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
@@ -51,6 +51,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 app.use((req, res, next) => {
+  console.log("PASTA FOREVER!")
   next();
 });
 
